@@ -23,12 +23,24 @@ public class ClientService {
             String login = consoleInputService.readMessage();
             System.out.println("Введи свой пароль:");
             String password = consoleInputService.readMessage();
-            //writerForServer.println("!@#$autho" + login + " : " + password);
-            writerForServer.println("!@#$reg" + login + " : " + password);
-            writerForServer.flush();
+
+            System.out.println("А теперь введи, что тебе надо старче:\n" +
+                    "aвторизация - 1\n" +
+                    "регистрация - 2");
+
+            String  magicCode = consoleInputService.readMessage();
+                if (magicCode.equals("1")) {
+                    writerForServer.println("!@#$autho" + login + " : " + password);
+                } else if (magicCode.equals("2")) {
+                    writerForServer.println("!@#$reg" + login + " : " + password);
+                } else {
+                    System.out.println("Пошел нафиг или попробуй снова в другой жизни!!");
+                    System.exit(-1);
+                }
+                writerForServer.flush();
 
             String consoleInput;
-            while ((consoleInput = consoleInputService.readMessage()) != null){
+            while ((consoleInput = consoleInputService.readMessage()) != null) {
                 writerForServer.println(consoleInput);
                 writerForServer.flush();
 
