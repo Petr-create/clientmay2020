@@ -17,4 +17,5 @@ public class MessageInputServiceTest {
                 new ByteArrayInputStream(new byte[]{12, 44, 22}));
         assertEquals( (char)12, messageInputService.readMessage().charAt(0));
     }
+
 }

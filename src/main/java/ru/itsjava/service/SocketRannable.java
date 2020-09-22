@@ -27,5 +27,6 @@ public class SocketRannable implements Runnable {
             }
             System.out.println(messageFromServer);
         }
+
     }
 }

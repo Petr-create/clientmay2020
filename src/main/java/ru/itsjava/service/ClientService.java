@@ -31,6 +31,7 @@ public class ClientService {
             while ((consoleInput = consoleInputService.readMessage()) != null){
                 writerForServer.println(consoleInput);
                 writerForServer.flush();
+
             }
         }
     }

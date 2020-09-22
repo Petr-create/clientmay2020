@@ -17,4 +17,5 @@ public class MessageInputService {
     public String readMessage(){
         return reader.readLine();
     }
+
 }
